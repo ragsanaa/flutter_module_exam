@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_module_exam/screens/cars_screen.dart';
+import 'package:banner_carousel/banner_carousel.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -46,9 +47,22 @@ class MainScreen extends StatelessWidget {
               ),
             ),
             Expanded(
-                child: Image.asset(
-              'assets/images/main_image.png',
-              fit: BoxFit.cover,
+                child: BannerCarousel(
+              margin: EdgeInsets.all(0),
+              height: 300,
+              customizedIndicators: IndicatorModel.animation(
+                  height: 6,
+                  width: 6,
+                  spaceBetween: 3,
+                  widthAnimation: 30,
+                  spaceBetweenAnimation: 3),
+              activeColor: Colors.white,
+              disableColor: Colors.white,
+              customizedBanners: [
+                Image.asset('assets/images/main_image2.png', fit: BoxFit.cover),
+                Image.asset('assets/images/main_image3.png', fit: BoxFit.cover),
+                Image.asset('assets/images/main_image.png', fit: BoxFit.cover),
+              ],
             )),
             Padding(
               padding: const EdgeInsets.all(25.0),
