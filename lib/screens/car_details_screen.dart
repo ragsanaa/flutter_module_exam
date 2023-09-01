@@ -2,10 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_module_exam/models/car_model.dart';
+import 'package:flutter_module_exam/utils/cars.dart';
 
 class CarDetailsScreen extends StatefulWidget {
-  Cars car;
-  CarDetailsScreen({super.key, required this.car});
+  final Cars car;
+  const CarDetailsScreen({super.key, required this.car});
 
   @override
   State<CarDetailsScreen> createState() => _CarDetailsScreenState();
@@ -44,8 +45,9 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
         children: [
           Expanded(
             flex: 2,
-            child: Image.network(
-                'https://i.pinimg.com/originals/49/17/c0/4917c017c89fcd6cb5fd6d7161daa5a8.png'),
+            child: Image.asset(
+              carsList[widget.car.model]!,
+            ),
           ),
           Expanded(
             flex: 3,
@@ -118,7 +120,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                       Padding(
                                         padding: const EdgeInsets.symmetric(
                                             vertical: 10),
-                                        child: Text('City Mpg'),
+                                        child: Text('Cylinders Count'),
                                       ),
                                       Text(
                                         widget.car.cityMpg.toString(),
@@ -185,7 +187,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                       Padding(
                                         padding: const EdgeInsets.symmetric(
                                             vertical: 10),
-                                        child: Text('Fuel Type'),
+                                        child: Text('Type of Fuel'),
                                       ),
                                       Text(
                                         widget.car.fuelType.name.toString(),

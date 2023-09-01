@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_module_exam/models/car_model.dart';
 import 'package:flutter_module_exam/screens/car_details_screen.dart';
 import 'package:flutter_module_exam/services/car_services.dart';
+import 'package:flutter_module_exam/utils/cars.dart';
 
 class CarsListWidget extends StatelessWidget {
   const CarsListWidget({
@@ -45,8 +46,8 @@ class CarsListWidget extends StatelessWidget {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10),
-                        child: Image.network(
-                            'https://i.pinimg.com/originals/49/17/c0/4917c017c89fcd6cb5fd6d7161daa5a8.png'),
+                        child: Image.asset(carsList[cars[index].model]!,
+                            width: 150, height: 100, fit: BoxFit.cover),
                       ),
                       Text(cars[index].make.name),
                       Row(
