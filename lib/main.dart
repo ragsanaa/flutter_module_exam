@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_module_exam/screens/cars_screen.dart';
+import 'package:flutter_module_exam/screens/main_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       title: 'Material App',
-      home: const CarsScreen(),
+      home: const MainScreen(),
     );
   }
 }
