@@ -54,8 +54,11 @@ class CarsListWidget extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            cars[index].model,
+                          Expanded(
+                            child: Text(
+                              cars[index].model,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
                           Text(cars[index].year.toString()),
                         ],
