@@ -37,7 +37,7 @@ class CarsListWidget extends StatelessWidget {
               },
               child: Stack(children: [
                 Container(
-                  padding: const EdgeInsets.fromLTRB(15, 15, 0, 15),
+                  padding: const EdgeInsets.fromLTRB(15, 15, 15, 15),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: Colors.grey[200]),
@@ -47,12 +47,16 @@ class CarsListWidget extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: Image.asset(carsList[cars[index].model]!,
-                            width: 150, height: 100, fit: BoxFit.cover),
+                            width: 150, height: 100),
                       ),
-                      Text(cars[index].make.name),
+                      Text(cars[index].make.name,
+                          style: TextStyle(fontWeight: FontWeight.bold)),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(cars[index].model),
+                          Text(
+                            cars[index].model,
+                          ),
                           Text(cars[index].year.toString()),
                         ],
                       ),
